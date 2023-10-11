@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println();
+        
+        //User will input 4 quiz scores and midterm score
+        System.out.print("  Enter your name: ");
+        String studentName=sc.nextLine();
+        
+        System.out.print("  Quiz 1 Score (0-100): ");
+        int quiz1 = sc.nextInt();
+        
+        System.out.print("  Quiz 2 Score (0-100): ");
+        int quiz2 = sc.nextInt();
+        
+        System.out.print("  Quiz 3 Score (0-100): ");
+        int quiz3 = sc.nextInt();
+        
+        System.out.print("  Quiz 4 Score (0-100): ");
+        int quiz4 = sc.nextInt();
+        
+        System.out.print("  Midterm Exam Score (0-100): ");
+        int midtermScore = sc.nextInt();
+        
+        System.out.println();
+        System.out.println();
+        
+        sc.close();
+        
+        //Check if the grade is passed or failed
+        double averageQuiz = (quiz1 + quiz2 + quiz3 + quiz4) / 4;
+        double midtermGrade = 0.4 * averageQuiz + 0.6 * midtermScore;
+        
+        //Display name of the user, midterm grade and remark
+        System.out.println("  Student Name: " + studentName);
+        System.out.println("  Midterm Grade: " + midtermGrade);
+        
+        if (midtermGrade >= 75) {
+            System.out.println("  Remark: Passed");
+        } else if (midtermGrade <= 75) {
+            System.out.println("  Remark: Failed");
+        } 
+        else {
+            System.out.println("  Invalid Scores");
+        }
+        
+    }
+}
